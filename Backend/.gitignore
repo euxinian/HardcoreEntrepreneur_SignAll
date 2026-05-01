@@ -1,0 +1,17 @@
+# Environments
+venv/
+.venv/
+env/
+
+#Useless
+__pycache__/
+*.egg-info/
+*.log
+*.py[cod]
+*.pyo
+
+# Model files
+*.pt
+*.pth
+*.ptl
+*.onnx

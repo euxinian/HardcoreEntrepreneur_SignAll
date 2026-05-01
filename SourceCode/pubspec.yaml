@@ -1,0 +1,40 @@
+name: signall
+description: "Sing Language App with a DETR model, that allows live practice"
+
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.4
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  http: ^1.2.0
+  camera: ^0.11.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/V1.png"
+  
+
+flutter:
+
+  uses-material-design: true
+  assets:
+      - assets/signs/
+      - assets/icons/
+
+  
