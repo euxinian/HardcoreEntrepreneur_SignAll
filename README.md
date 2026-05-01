@@ -15,9 +15,9 @@ Built by **Team SkyLine** for **Hardcore Entrepreneur 6.0**.
 
 ```
 HardcoreEntrepreneur_SignAll/
-├── SourceCode/     — Flutter Android application
-├── Backend/        — FastAPI inference server
-└── Deliverables/   — APK file, demo video, pitch video, business plan
+├── Backend/ - FastAPI inference server
+├── Deliverables/ - APK file, PDF with Demo and Pitch video links, PDF with business plan
+└── SourceCode/ - Flutter Android application
 ```
 
 ---
@@ -56,7 +56,7 @@ The API constants are **never stored in source code**. They are injected at comp
 
 ---
 
-## ⚙️ Backend — FastAPI Inference Server
+## ⚙️ Backend - FastAPI Inference Server
 
 A Python FastAPI server that receives camera frames, runs them through the DETR model, and returns structured JSON. Deployed on **Railway** as a Docker container.
 
