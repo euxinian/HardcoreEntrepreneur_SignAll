@@ -1,0 +1,53 @@
+{
+  "@@locale": "fr",
+
+  "appTitle": "SignAll",
+
+  "homeSubtitle": "Détection de langue des signes en direct",
+  "homeModelCard": "Modèle DETR Transformer",
+  "homeModelCardSub": "Dernier modèle : 18April.pt",
+  "homeModelVersion": "v2.0",
+
+  "statSigns": "Signes",
+
+  "actionLiveCamera": "Caméra en direct",
+  "actionStartDetecting": "Commencer",
+  "actionLearn": "Apprendre",
+
+  "cameraIdleTitle": "Prêt à détecter",
+  "cameraIdleSubtitle": "Appuyez sur Démarrer pour vous connecter\nau serveur et activer la caméra",
+  "cameraStartSession": "Démarrer la session",
+  "cameraInitialising": "Initialisation de la caméra...",
+
+  "learnTitle": "Centre d'apprentissage",
+  "learnSearchHint": "Rechercher des signes...",
+
+  "settingsTitle": "Paramètres",
+  "settingsLanguageSection": "Langue",
+  "settingsLanguageLabel": "Langue de l'application",
+  "settingsPrivacySection": "Confidentialité et sécurité",
+  "settingsPrivacyTitle": "Confidentialité des données",
+  "settingsPrivacyDetail": "Les images capturées par votre caméra sont envoyées directement à notre serveur FastAPI uniquement pour la détection des signes. Elles ne sont jamais stockées, enregistrées ni partagées. Le traitement se fait en temps réel et l'image est supprimée immédiatement après l'inférence.",
+  "settingsApiTitle": "Chiffrement de l'API",
+  "settingsApiDetail": "Tout le trafic entre l'application et le backend FastAPI utilise TLS (HTTPS). Le serveur est hébergé sur Railway, qui impose des connexions chiffrées et une gestion automatique des certificats.",
+  "settingsAboutSection": "À propos",
+  "settingsVersion": "Version de l'application",
+  "settingsModel": "Modèle de détection",
+  "settingsTeam": "Équipe",
+
+  "signDetailHowToSign": "Comment signer",
+  "signDetailTranslations": "Traductions",
+  "signDetailColor": "Couleur de détection",
+  "signDetailTryLive": "Essayer en direct",
+  "signDetailPhotoSoon": "Photo bientôt disponible",
+
+  "noSignDetected": "Aucun signe détecté...",
+  "showSignHint": "Montrez un signe à la caméra",
+
+  "signThankYou": "Merci",
+  "signNo": "Non",
+  "signHello": "Bonjour",
+  "signILY": "Je t'aime",
+  "signPlease": "S'il vous plaît",
+  "signSad": "Triste"
+}

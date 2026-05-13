@@ -1,0 +1,53 @@
+{
+  "@@locale": "de",
+
+  "appTitle": "SignAll",
+
+  "homeSubtitle": "Live-Gebärdenspracherkennung",
+  "homeModelCard": "DETR-Modell",
+  "homeModelCardSub": "Neuestes Modell: 18April.pt",
+  "homeModelVersion": "v2.0",
+
+  "statSigns": "Gebärden",
+
+  "actionLiveCamera": "Live-Kamera",
+  "actionStartDetecting": "Erkennung starten",
+  "actionLearn": "Lernen",
+
+  "cameraIdleTitle": "Bereit zur Erkennung",
+  "cameraIdleSubtitle": "Tippe auf „Start“, um dich mit dem Server zu verbinden\nund deine Kamera zu aktivieren",
+  "cameraStartSession": "Sitzung starten",
+  "cameraInitialising": "Kamera wird initialisiert...",
+
+  "learnTitle": "Lernzentrum",
+  "learnSearchHint": "Gebärden suchen...",
+
+  "settingsTitle": "Einstellungen",
+  "settingsLanguageSection": "Sprache",
+  "settingsLanguageLabel": "App-Sprache",
+  "settingsPrivacySection": "Datenschutz & Sicherheit",
+  "settingsPrivacyTitle": "Datenschutz",
+  "settingsPrivacyDetail": "Von deiner Kamera erfasste Bilder werden ausschließlich zur Gebärdenerkennung direkt an unseren FastAPI-Server gesendet. Sie werden niemals gespeichert, protokolliert oder weitergegeben. Die Verarbeitung erfolgt in Echtzeit und das Bild wird unmittelbar nach der Inferenz verworfen.",
+  "settingsApiTitle": "API-Verschlüsselung",
+  "settingsApiDetail": "Der gesamte Datenverkehr zwischen der App und dem FastAPI-Backend verwendet TLS (HTTPS). Der Server wird auf Railway gehostet, das verschlüsselte Verbindungen und automatische Zertifikatsverwaltung erzwingt.",
+  "settingsAboutSection": "Über",
+  "settingsVersion": "App-Version",
+  "settingsModel": "Erkennungsmodell",
+  "settingsTeam": "Team",
+
+  "signDetailHowToSign": "So wird es gebärdet",
+  "signDetailTranslations": "Übersetzungen",
+  "signDetailColor": "Erkennungsfarbe",
+  "signDetailTryLive": "Im Live-Modus ausprobieren",
+  "signDetailPhotoSoon": "Foto folgt bald",
+
+  "noSignDetected": "Keine Gebärde erkannt...",
+  "showSignHint": "Zeige der Kamera eine Gebärde",
+
+  "signThankYou": "Danke",
+  "signNo": "Nein",
+  "signHello": "Hallo",
+  "signILY": "Ich liebe dich",
+  "signPlease": "Bitte",
+  "signSad": "Traurig"
+}

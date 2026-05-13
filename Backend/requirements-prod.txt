@@ -1,5 +1,6 @@
 # Web Server
 fastapi==0.135.3
+slowapi==0.1.9
 uvicorn==0.42.0
 python-multipart==0.0.22
 pydantic==2.12.5

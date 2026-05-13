@@ -1,0 +1,53 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "SignAll",
+
+  "homeSubtitle": "Live sign language detection",
+  "homeModelCard": "DETR Model",
+  "homeModelCardSub": "Latest Model: 18April.pt",
+  "homeModelVersion": "v2.0",
+
+  "statSigns": "Signs",
+
+  "actionLiveCamera": "Live Camera",
+  "actionStartDetecting": "Start detecting",
+  "actionLearn": "Learn",
+
+  "cameraIdleTitle": "Ready to detect",
+  "cameraIdleSubtitle": "Tap start to connect to the server\nand enable your camera",
+  "cameraStartSession": "Start Session",
+  "cameraInitialising": "Initialising camera...",
+
+  "learnTitle": "Learning Center",
+  "learnSearchHint": "Search signs...",
+
+  "settingsTitle": "Settings",
+  "settingsLanguageSection": "Language",
+  "settingsLanguageLabel": "App Language",
+  "settingsPrivacySection": "Privacy & Security",
+  "settingsPrivacyTitle": "Data Privacy",
+  "settingsPrivacyDetail": "Images captured by your camera are sent directly to our FastAPI server for sign detection only. They are never stored, logged, or shared. Processing happens in real-time and the image is discarded immediately after inference.",
+  "settingsApiTitle": "API Encryption",
+  "settingsApiDetail": "All traffic between the app and the FastAPI backend uses TLS (HTTPS). The server is hosted on Railway, which enforces encrypted connections and automatic certificate management.",
+  "settingsAboutSection": "About",
+  "settingsVersion": "App Version",
+  "settingsModel": "Detection Model",
+  "settingsTeam": "Team",
+
+  "signDetailHowToSign": "How to sign it",
+  "signDetailTranslations": "Translations",
+  "signDetailColor": "Detection Colour",
+  "signDetailTryLive": "Try in live mode",
+  "signDetailPhotoSoon": "Photo coming soon",
+
+  "noSignDetected": "No sign detected...",
+  "showSignHint": "Show a sign to the camera",
+
+  "signThankYou": "Thank You",
+  "signNo": "No",
+  "signHello": "Hello",
+  "signILY": "I Love You",
+  "signPlease": "Please",
+  "signSad": "Sad"
+}

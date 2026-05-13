@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 
 enum ServerStatus { connecting, connected, reloading, disconnected }
 
@@ -34,11 +35,13 @@ class _StatusBadgeState extends State<StatusBadge>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     final (String label, Color color) = switch (widget.status) {
-      ServerStatus.connected    => ('CONNECTED',  const Color(0xFF34D399)),
-      ServerStatus.reloading    => ('SYNCING',    const Color(0xFFFBBF24)),
-      ServerStatus.disconnected => ('OFFLINE',    const Color(0xFFF87171)),
-      ServerStatus.connecting   => ('CONNECTING...', const Color(0xFF94A3B8)),
+      ServerStatus.connected    => (l10n.statusConnected,    const Color(0xFF34D399)),
+      ServerStatus.reloading    => (l10n.statusSyncing,      const Color(0xFFFBBF24)),
+      ServerStatus.disconnected => (l10n.statusOffline,      const Color(0xFFF87171)),
+      ServerStatus.connecting   => (l10n.statusConnecting,   const Color(0xFF94A3B8)),
     };
     final shouldPulse = widget.status == ServerStatus.connected;
 

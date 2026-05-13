@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import '../constants/theme.dart';
 import '../constants/signs_data.dart';
+import '../l10n/app_localizations.dart';
 import '../screens/sign_detail_screen.dart';
-
 
 class DetectionPanel extends StatelessWidget {
   final Map<String, dynamic>? top;
-
   final List<dynamic> secondary;
-
   final String labelKey;
 
   const DetectionPanel({
@@ -44,7 +42,7 @@ class DetectionPanel extends StatelessWidget {
           ),
         ),
         child: top == null
-            ? const IdlePanel(key: ValueKey('idle'))
+            ? IdlePanel(key: const ValueKey('idle'))
             : ActivePanel(
                 key: ValueKey(labelKey),
                 det: top!,
@@ -60,6 +58,8 @@ class IdlePanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Row(
       children: [
         Container(
@@ -77,23 +77,23 @@ class IdlePanel extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 14),
-        const Column(
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'No sign detected...',
-              style: TextStyle(
+              l10n.noSignDetected,
+              style: const TextStyle(
                 color: Colors.white60,
                 fontSize: 14.5,
                 fontWeight: FontWeight.w500,
                 letterSpacing: -0.1,
               ),
             ),
-            SizedBox(height: 3),
+            const SizedBox(height: 3),
             Text(
-              'Show a sign to the camera',
-              style: TextStyle(
+              l10n.showSignHint,
+              style: const TextStyle(
                 color: Colors.white24,
                 fontSize: 11.5,
                 letterSpacing: 0.1,
@@ -118,15 +118,17 @@ class ActivePanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localeCode = Localizations.localeOf(context).languageCode;
     final confidence = (det['confidence'] as num).toDouble();
-    final rawLabel = det['label'] as String;
-    final label = rawLabel.replaceAll('_', ' ');
+    final rawLabel   = det['label'] as String;
     final List<dynamic> rgb = det['color'];
     final color = Color.fromRGBO(
-      rgb[0] as int, rgb[1] as int, rgb[2] as int, 1.0);
+        rgb[0] as int, rgb[1] as int, rgb[2] as int, 1.0);
 
-    // Try to find the matching Sign for the info button
     final sign = signByName(rawLabel);
+    final displayLabel = sign != null
+        ? sign.wordFor(localeCode)
+        : rawLabel.replaceAll('_', ' ');
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -136,16 +138,16 @@ class ActivePanel extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 14, vertical: 9),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
               decoration: BoxDecoration(
                 color: color.withOpacity(0.12),
                 borderRadius: BorderRadius.circular(13),
-                border: Border.all(
-                    color: color.withOpacity(0.32), width: 0.9),
+                border:
+                    Border.all(color: color.withOpacity(0.32), width: 0.9),
               ),
               child: Text(
-                label,
+                displayLabel,
                 style: TextStyle(
                   color: color,
                   fontSize: 16,
@@ -239,8 +241,12 @@ class ActivePanel extends StatelessWidget {
             children: secondary.map((d) {
               final List<dynamic> c = d['color'];
               final col = Color.fromRGBO(
-                c[0] as int, c[1] as int, c[2] as int, 1.0);
-              final lbl = (d['label'] as String).replaceAll('_', ' ');
+                  c[0] as int, c[1] as int, c[2] as int, 1.0);
+              final secRaw   = d['label'] as String;
+              final secSign  = signByName(secRaw);
+              final secLabel = secSign != null
+                  ? secSign.wordFor(localeCode)
+                  : secRaw.replaceAll('_', ' ');
               final conf =
                   ((d['confidence'] as num).toDouble() * 100).toInt();
               return Padding(
@@ -255,7 +261,7 @@ class ActivePanel extends StatelessWidget {
                         color: col.withOpacity(0.22), width: 0.7),
                   ),
                   child: Text(
-                    '$lbl  $conf%',
+                    '$secLabel  $conf%',
                     style: TextStyle(
                       color: col,
                       fontSize: 10.5,
